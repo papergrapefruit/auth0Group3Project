@@ -1,0 +1,29 @@
+<script src="./assets/js/indexScript.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton"
+  async defer></script>
+
+<div class="container">
+  <div class="row">
+    <h2 class="text-center">Hone your skills with randomly generated
+      scores!
+      <br>
+      <h2 class="text-center">Or, craft your own masterpiece!</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2"></div>
+
+    <div class="col-md-4">
+      <form id="randomPage" method="GET" action="/random">
+        <button type="submit" class="btn" title="Random"
+          data-page="Select">Generate a random score</button>
+      </form>
+    </div>
+    <div class="col-md-4">
+      <form id="createPage" method="GET" action="/create">
+        <button type="submit" class="btn" title="Create your own score?"
+          data-page="Create">Create your own score</button>
+      </form>
+    </div>
+  </div>
+</div>

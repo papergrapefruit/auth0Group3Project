@@ -1,0 +1,40 @@
+<script src="../assets/js/sheet.js"></script>
+<script src="../assets/js/randomScript.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_plugin-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
+<div class="row">
+  <div class="col-md-9">
+
+    <div id="canvas"></div>
+
+  </div>
+  <div class="col-md-3 ">
+    <div class="row">
+      <button id="saveRandom" class='btn'>Save</button>
+      <button id="newRandom" class='btn'>New Random Score</button>
+    </div>
+
+    <div class="row" id="title-row">
+      <h3 class="text-center">Saved Random Scores</h3>
+    </div>
+
+    <div class="row" id="body-row">
+      <ul id="score-list">
+    {{#each scores}}
+      <li class="row score-list-item" id="score{{this.id}}">
+        <div class="col-xs-10">
+          <div music='{{this.music}}' score-id='{{this.id}}'class="score-item text-center">
+          <strong>{{this.title}}</strong></div>
+        </div>
+        <div class="col-xs-2">
+          <span class="delete glyphicon glyphicon-remove" title="Delete" score-id='{{this.id}}'></span>
+        </div>
+      </li>
+    {{/each}}
+      </ul>
+    </div>
+
+  </div>
+  
+</div>

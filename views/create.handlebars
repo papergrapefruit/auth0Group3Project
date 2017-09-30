@@ -1,0 +1,44 @@
+<link rel="stylesheet" type="text/css" href="../assets/css/abcjs-midi.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/3.1.1/abcjs_editor_midi-min.js"></script>
+<script src="../assets/js/createScript.js"></script>
+
+<div class="col-md-9">
+  <div class="row">
+    <textarea id="abc" rows="10" cols="20"></textarea>
+    <div id="midi-download"></div>
+    <div id="warnings"> </div>
+    <div id="canvas" style></div>
+    <div id="notation"></div>
+    <div id="midi"></div>
+    
+  </div>
+</div>
+
+<div class="col-md-3">
+  <div class="row">
+    <button id="saveCreation" class='btn'>Save </button>
+    <button id="makeMidi" class='btn'>MIDI</button>
+    <button id="newScore" class='btn'>New</button>
+  </div>
+
+  <div class="row" id="title-row">
+    <h4 class="text-center">Saved Scores</h4>
+  </div>
+
+  <div class="row" id="body-row">
+    <ul id="score-list">
+    {{#each scores}}
+      <li class="row score-list-item" id="score{{this.id}}">
+        <div class="col-xs-10">
+          <div music='{{this.music}}' score-id='{{this.id}}'class="score-item text-center">
+          <strong>{{this.title}}</strong></div>
+        </div>
+        <div class="col-xs-2">
+          <span class="delete glyphicon glyphicon-remove" title="Delete" score-id='{{this.id}}'></span>
+        </div>
+      </li>
+    {{/each}}
+    </ul>
+  </div>
+</div>
